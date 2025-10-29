@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Elogio o Engaño?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Pantalla de bienvenida -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <div class="game-icon">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-thumbs-up"></i>
+                </div>
+                <h1 class="game-title">¿Elogio o Engaño?</h1>
+                <p class="game-subtitle">¡Descubre si las frases son verdaderos elogios o intentos de manipulación!</p>
+                <div class="instructions">
+                    <h3><i class="fas fa-info-circle"></i> Instrucciones:</h3>
+                    <ul>
+                        <li>Lee cada frase con atención</li>
+                        <li>Decide si es un <strong>elogio sincero</strong> o una <strong>adulación manipuladora</strong></li>
+                        <li>Aprenderás a identificar las diferencias</li>
+                    </ul>
+                </div>
+                <button id="start-btn" class="btn btn-primary">
+                    <i class="fas fa-play"></i> ¡Comenzar!
+                </button>
+            </div>
+        </div>
+
+        <!-- Pantalla del juego -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <span id="question-counter" class="question-counter">1/20</span>
+                </div>
+                <div class="score-container">
+                    <i class="fas fa-trophy"></i>
+                    <span id="score">0</span>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div id="phrase-card" class="phrase-card">
+                    <div class="card-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p id="phrase-text" class="phrase-text"></p>
+                    <div class="card-decoration">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+
+                <div id="feedback" class="feedback hidden">
+                    <div class="feedback-content">
+                        <div id="feedback-icon" class="feedback-icon"></div>
+                        <h3 id="feedback-title" class="feedback-title"></h3>
+                        <p id="feedback-text" class="feedback-text"></p>
+                        <button id="continue-btn" class="btn btn-next">
+                            <span id="continue-text">Siguiente</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="answer-buttons" class="answer-buttons">
+                    <button class="btn btn-answer btn-true" data-answer="true">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Verdadero</span>
+                    </button>
+                    <button class="btn btn-answer btn-false" data-answer="false">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Falso</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pantalla final -->
+        <div id="final-screen" class="screen">
+            <div class="final-content">
+                <div class="final-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h2 class="final-title">¡Juego Terminado!</h2>
+                <div class="final-score">
+                    <span class="score-number" id="final-score">0</span>
+                    <span class="score-total">/ 20</span>
+                </div>
+                <p id="final-message" class="final-message"></p>
+                <button id="restart-btn" class="btn btn-primary">
+                    <i class="fas fa-redo"></i> Jugar de nuevo
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
